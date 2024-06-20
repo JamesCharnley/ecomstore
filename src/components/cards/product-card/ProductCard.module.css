@@ -1,0 +1,65 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  width: 100%;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+}
+.image{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  width: 100%;
+  height: 270px;
+  border-radius: 4%;
+}
+.title_container{
+  height: 150px;
+}
+.title{
+  font-family: didot, serif;
+  font-weight: 100;
+  font-size: 25px;
+}
+a{
+  text-decoration: none;
+}
+a, .container p, .container h3{
+  color: black;
+}
+.buy{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+}
+.price_container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.price_sticky{
+  margin-top: auto;
+}
+.price{
+  margin: 0;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.form{
+  margin-top: auto;
+  
+}
+.button{
+  background-color: black;
+  color: ghostwhite;
+  float: right;
+}
+.form input{
+  width: 14%;
+  float: right;
+}
