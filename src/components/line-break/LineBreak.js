@@ -1,7 +1,7 @@
 import styles from './LineBreak.module.css';
 
-export function LineBreak({width}){
+export function LineBreak({width, margin}){
   return (
-    <div style={{width: width}} className={styles.line}></div>
+    <div style={{width: width, marginTop: margin, marginBottom: margin}} className={styles.line}></div>
   );
 }

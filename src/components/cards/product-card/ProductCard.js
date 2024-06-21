@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './ProductCard.module.css';
 
-export function ProductCard({product, width}){
+export function ProductCard({product, width, addToCart}){
   const [itemNumber, setItemNumber] = useState(1);
 
   function handleInput(e){
@@ -9,6 +9,17 @@ export function ProductCard({product, width}){
     if(e.target.value !== itemNumber){
       setItemNumber(e.target.value);
     }
+  }
+  function handleAddToCart(e){
+    e.preventDefault();
+    const item = {
+      id: product.id,
+      quantity: itemNumber,
+      title: product.title,
+      price: product.price,
+      image: product.image
+    };
+    addToCart(item);
   }
   return (
     <div style={{ width: width }} className={styles.container}>
@@ -34,7 +45,7 @@ export function ProductCard({product, width}){
               value={itemNumber}
               onChange={handleInput}
             ></input>
-            <button className={styles.button} type="submit">Add to cart</button>
+            <button className={styles.button} onClick={handleAddToCart}>Add to cart</button>
           </form>
         </div>
       </div>
