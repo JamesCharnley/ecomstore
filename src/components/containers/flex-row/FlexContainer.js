@@ -16,7 +16,7 @@ export function FlexContainer({ children }) {
   }, []);
   return (
     <div
-      className={styles.flex_container}
+      style={screenWidth < 450 ? {flexDirection: "column"} : null} className={styles.flex_container}
     >
       {children}
     </div>

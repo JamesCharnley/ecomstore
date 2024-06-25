@@ -1,8 +1,20 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import styles from './ProductCard.module.css';
 
 export function ProductCard({product, width, addToCart}){
   const [itemNumber, setItemNumber] = useState(1);
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   function handleInput(e){
     e.preventDefault();
@@ -29,7 +41,7 @@ export function ProductCard({product, width, addToCart}){
           className={styles.image}
         ></div>
         <div className={styles.title_container}>
-          <h3 className={styles.title}>{product.title}</h3>
+          <h3 style={screenWidth >= 700 && screenWidth < 1000 ? {fontSize: "22px"} : {fontSize: "25px"}} className={styles.title}>{product.title}</h3>
         </div>
       </a>
       <div className={styles.footer}>
@@ -45,7 +57,7 @@ export function ProductCard({product, width, addToCart}){
               value={itemNumber}
               onChange={handleInput}
             ></input>
-            <button className={styles.button} onClick={handleAddToCart}>Add to cart</button>
+            <button style={screenWidth < 950 ? {fontSize: "12px", width: "50%"} : null} className={styles.button} onClick={handleAddToCart}>Add to cart</button>
           </form>
         </div>
       </div>

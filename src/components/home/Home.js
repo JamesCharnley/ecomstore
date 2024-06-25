@@ -52,7 +52,7 @@ export function Home({ cartContent, removeItemFromCart, addItemToCart }) {
             width={"24%"}
           />
         </FlexContainer>
-      ) : (
+      ) : screenWidth > 450 ? (
         <>
           <FlexContainer>
             <CategoryCard
@@ -83,33 +83,60 @@ export function Home({ cartContent, removeItemFromCart, addItemToCart }) {
             />
           </FlexContainer>
         </>
+      ) : (
+        <FlexContainer>
+          <CategoryCard
+            imageUrl={"/electronics.jpg"}
+            title={"Electronics"}
+            href={"/category/electronics"}
+            width={"98%"}
+          />
+          <CategoryCard
+            imageUrl={"/jewellery.jpg"}
+            title={"Jewellery"}
+            href={"/category/jewellery"}
+            width={"98%"}
+          />
+          <CategoryCard
+            imageUrl={"/mensclothes.jpg"}
+            title={"Men's Clothing"}
+            href={"/category/menclothing"}
+            width={"98%"}
+          />
+          <CategoryCard
+            imageUrl={"/womensclothes.jpg"}
+            title={"Women's Clothing"}
+            href={"/category/jewellery"}
+            width={"98%"}
+          />
+        </FlexContainer>
       )}
       <LineBreak width={"95%"} margin={"25px"} />
       <ProductRow
         title={"Best Sellers: Men's Clothing"}
         category={"men's clothing"}
-        maxProducts={screenWidth > 700 ? 3 : 2}
+        maxProducts={5}
         addToCart={addItemToCart}
       />
       <LineBreak width={"95%"} margin={"25px"} />
       <ProductRow
         title={"Best Sellers: Women's Clothing"}
         category={"women's clothing"}
-        maxProducts={screenWidth > 700 ? 3 : 2}
+        maxProducts={5}
         addToCart={addItemToCart}
       />
       <LineBreak width={"95%"} margin={"25px"} />
       <ProductRow
         title={"Best Sellers: Electronics"}
         category={"electronics"}
-        maxProducts={screenWidth > 700 ? 3 : 2}
+        maxProducts={5}
         addToCart={addItemToCart}
       />
       <LineBreak width={"95%"} margin={"25px"} />
       <ProductRow
         title={"Best Sellers: Jewelery"}
         category={"jewelery"}
-        maxProducts={screenWidth > 700 ? 3 : 2}
+        maxProducts={5}
         addToCart={addItemToCart}
       />
       <LineBreak width={"95%"} margin={"25px"} />
