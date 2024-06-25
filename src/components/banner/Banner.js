@@ -39,7 +39,7 @@ export function Banner({cartContent, removeItemFromCart}){
         ({cartContent.length}) Cart
       </button>
       {cartOpen && (
-        <div className={styles.cart_container}>
+        <div style={screenWidth > 450 ? {width: "400px"} : {width: "90%"}} className={styles.cart_container}>
           {cartContent.map((i) => (
             <CartItem
               item={i}

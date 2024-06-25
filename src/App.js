@@ -1,24 +1,25 @@
-import './App.css';
-import { useState } from 'react';
-import { Home } from './components/home/Home';
+import "./App.css";
+import { useState } from "react";
+import { Home } from "./components/pages/home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Category } from "./components/pages/category/Category";
 
 export default function App() {
   const [cartContent, setCartContent] = useState([]);
 
-  function addItemToCart(item){
+  function addItemToCart(item) {
     const existingItem = cartContent.find((i) => i.id === item.id);
-    if(existingItem){
+    if (existingItem) {
       existingItem.quantity += item.quantity;
-      setCartContent([...cartContent.filter((i) => i.id !== item.id), existingItem]);
-    }
-    else{
+      setCartContent([
+        ...cartContent.filter((i) => i.id !== item.id),
+        existingItem,
+      ]);
+    } else {
       setCartContent([...cartContent, item]);
     }
   }
-  function removeItemFromCart(item) {
-
-  }
+  function removeItemFromCart(item) {}
 
   return (
     <BrowserRouter>
@@ -31,6 +32,12 @@ export default function App() {
               removeItemFromCart={removeItemFromCart}
               addItemToCart={addItemToCart}
             />
+          }
+        ></Route>
+        <Route path="/category/:category" element={<Category 
+          cartContent={cartContent}
+          removeItemFromCart={removeItemFromCart}
+          addItemToCart={addItemToCart}/>
           }
         ></Route>
       </Routes>

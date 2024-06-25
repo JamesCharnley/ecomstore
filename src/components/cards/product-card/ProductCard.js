@@ -34,7 +34,7 @@ export function ProductCard({product, width, addToCart}){
     addToCart(item);
   }
   return (
-    <div style={{ width: width }} className={styles.container}>
+    <div style={screenWidth > 450 ? { width: width } : {width: width, marginTop: "30px"}} className={styles.container}>
       <a href={`/product/${product.id}`}>
         <div
           style={{ backgroundImage: `url(${product.image})` }}

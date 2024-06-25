@@ -1,8 +1,8 @@
-import { FlexContainer } from "../containers/flex-row/FlexContainer";
-import { CategoryCard } from "../cards/category-card/CategoryCard";
-import { Banner } from "../banner/Banner";
-import { ProductRow } from "../product-row/ProductRow";
-import { LineBreak } from "../line-break/LineBreak";
+import { FlexContainer } from "../../containers/flex-row/FlexContainer";
+import { CategoryCard } from "../../cards/category-card/CategoryCard";
+import { Banner } from "../../banner/Banner";
+import { ProductRow } from "../../product-row/ProductRow";
+import { LineBreak } from "../../line-break/LineBreak";
 import { useEffect, useState } from "react";
 export function Home({ cartContent, removeItemFromCart, addItemToCart }) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
