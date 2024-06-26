@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import styles from './ProductCard.module.css';
+import { Link } from 'react-router-dom';
 
 export function ProductCard({product, width, addToCart}){
   const [itemNumber, setItemNumber] = useState(1);
@@ -35,7 +36,7 @@ export function ProductCard({product, width, addToCart}){
   }
   return (
     <div style={screenWidth > 450 ? { width: width } : {width: width, marginTop: "30px"}} className={styles.container}>
-      <a href={`/product/${product.id}`}>
+      <Link to={`/product/${product.id}`}>
         <div
           style={{ backgroundImage: `url(${product.image})` }}
           className={styles.image}
@@ -43,7 +44,7 @@ export function ProductCard({product, width, addToCart}){
         <div className={styles.title_container}>
           <h3 style={screenWidth >= 700 && screenWidth < 1000 ? {fontSize: "22px"} : {fontSize: "25px"}} className={styles.title}>{product.title}</h3>
         </div>
-      </a>
+      </Link>
       <div className={styles.footer}>
         <div className={styles.price_container}>
           <div className={styles.price_sticky}>
