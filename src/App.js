@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Home } from "./components/pages/home/Home";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Category } from "./components/pages/category/Category";
+import { Product } from "./components/pages/product/Product";
 
 export default function App() {
   const [cartContent, setCartContent] = useState([]);
@@ -34,12 +35,16 @@ export default function App() {
             />
           }
         ></Route>
-        <Route path="/category/:category" element={<Category 
-          cartContent={cartContent}
-          removeItemFromCart={removeItemFromCart}
-          addItemToCart={addItemToCart}/>
+        <Route 
+          path="/category/:category" 
+          element={
+            <Category 
+              cartContent={cartContent}
+              removeItemFromCart={removeItemFromCart}
+              addItemToCart={addItemToCart}/>
           }
         ></Route>
+        <Route path="/product/:id" element={<Product cartContent={cartContent} removeItemFromCart={removeItemFromCart} addItemToCart={addItemToCart} />}></Route>
       </Routes>
     </BrowserRouter>
   );

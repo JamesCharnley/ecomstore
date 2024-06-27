@@ -1,9 +1,11 @@
-import { FlexContainer } from "../../containers/flex-row/FlexContainer";
+import { FlexContainer } from "../../containers/flex-container/FlexContainer";
 import { CategoryCard } from "../../cards/category-card/CategoryCard";
 import { Banner } from "../../banner/Banner";
 import { ProductRow } from "../../product-row/ProductRow";
 import { LineBreak } from "../../line-break/LineBreak";
 import { useEffect, useState } from "react";
+
+
 export function Home({ cartContent, removeItemFromCart, addItemToCart }) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   useEffect(() => {
@@ -17,7 +19,6 @@ export function Home({ cartContent, removeItemFromCart, addItemToCart }) {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-  console.log(screenWidth);
 
   return (
     <>
@@ -26,7 +27,7 @@ export function Home({ cartContent, removeItemFromCart, addItemToCart }) {
         removeItemFromCart={removeItemFromCart}
       />
       {screenWidth > 700 ? (
-        <FlexContainer>
+        <FlexContainer transitionWidth={450}>
           <CategoryCard
             imageUrl={"/electronics.jpg"}
             title={"Electronics"}
@@ -35,26 +36,26 @@ export function Home({ cartContent, removeItemFromCart, addItemToCart }) {
           />
           <CategoryCard
             imageUrl={"/jewellery.jpg"}
-            title={"Jewellery"}
-            href={"/category/jewellery"}
+            title={"Jewelery"}
+            href={"/category/jewelery"}
             width={"24%"}
           />
           <CategoryCard
             imageUrl={"/mensclothes.jpg"}
             title={"Men's Clothing"}
-            href={"/category/menclothing"}
+            href={"/category/men's clothing"}
             width={"24%"}
           />
           <CategoryCard
             imageUrl={"/womensclothes.jpg"}
             title={"Women's Clothing"}
-            href={"/category/jewellery"}
+            href={"/category/women's clothing"}
             width={"24%"}
           />
         </FlexContainer>
       ) : screenWidth > 450 ? (
         <>
-          <FlexContainer>
+          <FlexContainer transitionWidth={450}>
             <CategoryCard
               imageUrl={"/electronics.jpg"}
               title={"Electronics"}
@@ -63,28 +64,28 @@ export function Home({ cartContent, removeItemFromCart, addItemToCart }) {
             />
             <CategoryCard
               imageUrl={"/jewellery.jpg"}
-              title={"Jewellery"}
-              href={"/category/jewellery"}
+              title={"Jewelery"}
+              href={"/category/jewelery"}
               width={"45%"}
             />
           </FlexContainer>
-          <FlexContainer>
+          <FlexContainer transitionWidth={450}>
             <CategoryCard
               imageUrl={"/mensclothes.jpg"}
               title={"Men's Clothing"}
-              href={"/category/menclothing"}
+              href={"/category/men's clothing"}
               width={"45%"}
             />
             <CategoryCard
               imageUrl={"/womensclothes.jpg"}
               title={"Women's Clothing"}
-              href={"/category/jewellery"}
+              href={"/category/women's clothing"}
               width={"45%"}
             />
           </FlexContainer>
         </>
       ) : (
-        <FlexContainer>
+        <FlexContainer transitionWidth={450}>
           <CategoryCard
             imageUrl={"/electronics.jpg"}
             title={"Electronics"}
@@ -93,20 +94,20 @@ export function Home({ cartContent, removeItemFromCart, addItemToCart }) {
           />
           <CategoryCard
             imageUrl={"/jewellery.jpg"}
-            title={"Jewellery"}
-            href={"/category/jewellery"}
+            title={"Jewelery"}
+            href={"/category/jewelery"}
             width={"98%"}
           />
           <CategoryCard
             imageUrl={"/mensclothes.jpg"}
             title={"Men's Clothing"}
-            href={"/category/menclothing"}
+            href={"/category/men's clothing"}
             width={"98%"}
           />
           <CategoryCard
             imageUrl={"/womensclothes.jpg"}
             title={"Women's Clothing"}
-            href={"/category/jewellery"}
+            href={"/category/women's clothing"}
             width={"98%"}
           />
         </FlexContainer>

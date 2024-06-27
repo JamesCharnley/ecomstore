@@ -1,0 +1,23 @@
+.container{
+  margin-left: auto;
+  margin-right: auto;
+}
+.product{
+  margin-left: auto;
+  margin-right: auto;
+}
+.image{
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  height: 600px;
+  border-radius: 4%;
+}
+.product_info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.title{
+  font-size: 28px;
+}

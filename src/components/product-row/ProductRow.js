@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { ProductCard } from "../cards/product-card/ProductCard";
-import { FlexContainer } from "../containers/flex-row/FlexContainer";
+import { FlexContainer } from "../containers/flex-container/FlexContainer";
 import styles from "./ProductRow.module.css";
 
 export function ProductRow({ title, category, maxProducts, addToCart }) {
