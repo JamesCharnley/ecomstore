@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./FlexContainer.module.css";
 
-export function FlexContainer({ children, transitionWidth }) {
+export function FlexContainer({ children, transitionWidth, gap = "0px" }) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   useEffect(() => {
     const handleResize = () => {
@@ -16,7 +16,7 @@ export function FlexContainer({ children, transitionWidth }) {
   }, []);
   return (
     <div
-      style={screenWidth < transitionWidth ? {flexDirection: "column"} : null} className={styles.flex_container}
+      style={screenWidth < transitionWidth ? {flexDirection: "column"} : {gap: gap}} className={styles.flex_container}
     >
       {children}
     </div>

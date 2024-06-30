@@ -54,17 +54,17 @@ export function Product({cartContent, removeItemFromCart, addItemToCart}){
         style={screenWidth < 1000 ? { width: "100vw" } : { width: "80vw" }}
         className={styles.container}
       >
-        <FlexContainer transitionWidth={650}>
+        <FlexContainer transitionWidth={650} gap={"25px"}>
           <div
             style={
               screenWidth < 650
                 ? { backgroundImage: `url(${product.image})`, width: "100%" }
-                : { backgroundImage: `url(${product.image})`, width: "60%" }
+                : { backgroundImage: `url(${product.image})`, width: "55%" }
             }
             className={styles.image}
           ></div>
           <div
-            style={screenWidth < 650 ? { width: "100%" } : { width: "40%" }}
+            style={screenWidth < 650 ? { width: "100%" } : { width: "45%" }}
             className={styles.product_info}
           >
             <div className={styles.title_desc}>
