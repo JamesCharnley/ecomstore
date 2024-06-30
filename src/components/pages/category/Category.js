@@ -32,6 +32,8 @@ export function Category({ cartContent, removeItemFromCart, addItemToCart }) {
     return <p>loading...</p>
   }
 
+  setFilteredProducts(products);
+
   if(filter === "price-low"){
     filteredProducts.sort(function(a, b){
       return Number(a.price) - Number(b.price);
