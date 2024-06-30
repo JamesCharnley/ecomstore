@@ -35,7 +35,7 @@ export function Home({ cartContent, removeItemFromCart, addItemToCart }) {
             width={"24%"}
           />
           <CategoryCard
-            imageUrl={"/jewellery.jpg"}
+            imageUrl={"/Jewellery.jpg"}
             title={"Jewelery"}
             href={"/category/jewelery"}
             width={"24%"}

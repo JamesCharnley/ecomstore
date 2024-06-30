@@ -11,7 +11,6 @@ export function Category({ cartContent, removeItemFromCart, addItemToCart }) {
 
   let {category} = useParams();
   const [filter, setFilter] = useState("none");
-  const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   useEffect(
     function () {
@@ -20,7 +19,6 @@ export function Category({ cartContent, removeItemFromCart, addItemToCart }) {
           `https://fakestoreapi.com/products/category/${category}`
         );
         const data = await res.json();
-        setProducts(data);
         setFilteredProducts(data);
       }
       fetchProducts();
@@ -31,8 +29,6 @@ export function Category({ cartContent, removeItemFromCart, addItemToCart }) {
   if(!filteredProducts){
     return <p>loading...</p>
   }
-
-  setFilteredProducts(products);
 
   if(filter === "price-low"){
     filteredProducts.sort(function(a, b){
