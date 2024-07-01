@@ -34,7 +34,7 @@ export function Banner({cartContent, removeItemFromCart}){
         }
         className={styles.image}
       ></div>
-      <h1 style={screenWidth > 450 ? {fontSize: "100px"} : {fontSize: "60px"}} className={styles.title}>Azure Attire</h1>
+      <img className={styles.name_image} src={'/namepng150.png'} alt={'name'}></img>
       <button onClick={handleToggleCart} className={styles.cart_button}>
         ({cartContent.length}) Cart
       </button>
