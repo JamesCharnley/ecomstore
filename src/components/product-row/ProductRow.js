@@ -35,7 +35,10 @@ export function ProductRow({ title, category, maxProducts, addToCart }) {
   }
 
   let displayProducts = [];
-  if (screenWidth < 700) {
+  if(screenWidth < 480){
+    displayProducts = [...products.slice(0, 1)];
+  }
+  else if (screenWidth < 700) {
     displayProducts = [...products.slice(0, 2)];
   } else {
     displayProducts = [...products.slice(0, 3)];

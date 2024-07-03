@@ -5,6 +5,7 @@ import { ProductRow } from "../../product-row/ProductRow";
 import { LineBreak } from "../../line-break/LineBreak";
 import { useEffect, useState } from "react";
 
+// responsive tested
 
 export function Home({ cartContent, removeItemFromCart, addItemToCart }) {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);

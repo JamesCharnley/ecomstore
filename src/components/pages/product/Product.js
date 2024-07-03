@@ -73,8 +73,26 @@ export function Product({cartContent, removeItemFromCart, addItemToCart}){
             className={styles.product_info}
           >
             <div className={styles.title_desc}>
-              <h3 className={styles.title}>{product.title}</h3>
-              <p className={styles.description}>{product.description}</p>
+              <h3
+                style={
+                  screenWidth < 920
+                    ? { fontSize: "32px" }
+                    : { fontSize: "28px" }
+                }
+                className={styles.title}
+              >
+                {product.title}
+              </h3>
+              <p
+                style={
+                  screenWidth < 920
+                    ? { fontSize: "28px" }
+                    : { fontSize: "25px" }
+                }
+                className={styles.description}
+              >
+                {product.description}
+              </p>
             </div>
             <ProductFooter
               addToCart={addItemToCart}
