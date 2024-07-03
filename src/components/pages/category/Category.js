@@ -1,5 +1,5 @@
 import styles from './Category.module.css';
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { Banner } from "../../banner/Banner";
 import { AutoGrid } from "../../containers/flex-container/grid/AutoGrid";
 import { GridItem } from "../../containers/flex-container/grid/grid-item/GridItem";
@@ -59,6 +59,14 @@ export function Category({ cartContent, removeItemFromCart, addItemToCart }) {
         cartContent={cartContent}
         removeItemFromCart={removeItemFromCart}
       />
+      <br></br>
+      <Link
+        style={{ paddingLeft: "20px", textDecoration: "underLine" }}
+        to={`/`}
+      >{`<- back to home`}</Link>
+      <br></br>
+      <br></br>
+      <br></br>
       <div className={styles.container}>
         <div className={styles.title_section}>
           <h3 className={styles.title}>

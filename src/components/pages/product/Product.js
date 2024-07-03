@@ -3,7 +3,7 @@ import { FlexContainer } from '../../containers/flex-container/FlexContainer';
 import { ProductFooter } from '../../cards/product-card/ProductFooter';
 import styles from './Product.module.css';
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { LineBreak } from '../../line-break/LineBreak';
 import { ProductRow } from '../../product-row/ProductRow';
 
@@ -47,6 +47,11 @@ export function Product({cartContent, removeItemFromCart, addItemToCart}){
         cartContent={cartContent}
         removeItemFromCart={removeItemFromCart}
       />
+      <br></br>
+      <Link
+        style={{ paddingLeft: "20px", textDecoration: "underLine" }}
+        to={`/category/${product.category}`}
+      >{`<- back to ${product.category}`}</Link>
       <br></br>
       <br></br>
       <br></br>
