@@ -20,7 +20,7 @@ export function CategoryCard({imageUrl, title, href, width, height}){
  
   const defScreenWidth = screenWidth > 700 ? 1900 : screenWidth < 450 ? 450 : 700;
   const defContainerHeight = screenWidth > 700 ? 720 : screenWidth < 450 ? 650 : 520;
-  const defTitleFontSize = screenWidth > 1500 ? 34 : screenWidth < 700 && screenWidth > 450 ? 35 : 50;
+  const defTitleFontSize = screenWidth > 1500 ? 34 : screenWidth < 700 && screenWidth > 450 ? 35 : 45;
   const widthRatio = screenWidth / defScreenWidth;
 
   return (

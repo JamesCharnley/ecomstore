@@ -1,10 +1,10 @@
 import { LineBreak } from '../line-break/LineBreak';
 import styles from './CartItem.module.css';
 
-export function CartItem({item}){
+export function CartItem({item, removeItemFromCart}){
 
   function handleRemoveItem(){
-    
+    removeItemFromCart(item);
   }
   return (
     <>

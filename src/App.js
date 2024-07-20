@@ -20,7 +20,12 @@ export default function App() {
       setCartContent([...cartContent, item]);
     }
   }
-  function removeItemFromCart(item) {}
+  function removeItemFromCart(item) {
+    const existingItem = cartContent.find((i) => i.id === item.id);
+    if(existingItem){
+      setCartContent([...cartContent.filter((i) => i.id !== item.id)]);
+    }
+  }
 
   return (
     <BrowserRouter>
